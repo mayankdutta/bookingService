@@ -2,7 +2,7 @@ const { StatusCodes } = require("http-status-codes");
 
 class AppError extends Error {
   constructor(name, message, explanation, statusCode) {
-    // may be not here.
+    // might not be required.
     // super();
 
     this.name = name;

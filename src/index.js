@@ -13,12 +13,11 @@ async function setupAndStartServer() {
   app.use("/api", apiRoutes);
 
   app.listen(PORT, () => {
-    console.log(`server is listentning @port = ${PORT}`); 
+    console.log(`server is listentning @port = ${PORT}`);
     if (DB_SYNC) {
-      console.log('performing DB_SYNC')
+      console.log("performing DB_SYNC");
       db.sequelize.sync({ alter: true });
     }
   });
 }
-
 setupAndStartServer();

@@ -9,7 +9,13 @@ const { BookingController } = require("../../controllers/index");
 
 const bookingController = new BookingController();
 
+router.get("/info", (req, res) => {
+  res.status(200).json({
+    message: "hitted by an API",
+  });
+});
+
 router.post("/bookings", bookingController.create);
-router.post('/publish', bookingController.sendMessageToQueue);
+router.post("/publish", bookingController.sendMessageToQueue);
 
 module.exports = router;
